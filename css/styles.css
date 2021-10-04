@@ -53,6 +53,8 @@ img {
   margin: 0;
 }
 .link {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   color: inherit;
 }
@@ -61,6 +63,7 @@ img {
 .link.current {
   color: var(--accent-color-text);
 }
+
 .item {
   list-style: none;
 }
@@ -68,6 +71,8 @@ img {
   color: var(--accent-color-text);
 }
 .btn {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -119,6 +124,21 @@ img {
   display: flex;
   align-items: center;
 }
+
+.header-navigation-item > .current {
+  position: relative;
+}
+.current::after {
+  content: "";
+  position: absolute;
+  bottom: -33px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color-bg);
+}
+
 .header-logo {
   font-family: Raleway;
   font-style: normal;
@@ -139,6 +159,7 @@ img {
   display: flex;
   align-items: center;
 }
+
 .nav-link {
   display: flex;
   align-items: center;
@@ -346,6 +367,8 @@ img {
   margin-left: 10px;
 }
 .social-link {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   height: 100%;
   display: flex;
@@ -365,6 +388,8 @@ img {
 }
 
 .social-icon {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 20px;
   height: 20px;
   fill: #afb1b8;
@@ -381,6 +406,8 @@ img {
 }
 
 .client-link {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -394,6 +421,8 @@ img {
   margin-left: 30px;
 }
 .client-icon {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   fill: #afb1b8;
   display: block;
 }
@@ -477,6 +506,8 @@ img {
   margin-bottom: 50px;
 }
 .filter-btn {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 4px;
   padding: 6px 22px;
   box-sizing: content-box;
@@ -500,6 +531,8 @@ img {
   margin-bottom: -30px;
 }
 .project-item {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-bottom: 30px;
