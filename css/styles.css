@@ -53,8 +53,7 @@ img {
   margin: 0;
 }
 .link {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   color: inherit;
 }
@@ -71,8 +70,8 @@ img {
   color: var(--accent-color-text);
 }
 .btn {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -137,6 +136,7 @@ img {
   height: 4px;
   border-radius: 2px;
   background-color: var(--accent-color-bg);
+  display: block;
 }
 
 .header-logo {
@@ -249,11 +249,13 @@ img {
   margin-left: auto;
   margin-right: auto;
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--accent-color-bg);
 }
+
 /* Feature */
 .feature {
   background-color: var(--bg-color-title);
@@ -312,6 +314,25 @@ img {
   flex-basis: calc(100% / 4 -30px);
   margin-left: 30px;
 }
+.product-card {
+  position: relative;
+}
+.product-card-title {
+  width: 100%;
+  height: 70px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 /* Наща команда  */
 .team {
   background-color: var(--bg-color-second);
@@ -367,8 +388,8 @@ img {
   margin-left: 10px;
 }
 .social-link {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   height: 100%;
   display: flex;
@@ -406,8 +427,7 @@ img {
 }
 
 .client-link {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -421,8 +441,7 @@ img {
   margin-left: 30px;
 }
 .client-icon {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #afb1b8;
   display: block;
 }
@@ -497,6 +516,7 @@ img {
   margin-bottom: 20px;
 }
 /* ПОРТФОЛИО ФИЛЬТР*/
+
 .filter {
   background-color: var(--bg-color-title);
 }
@@ -531,8 +551,7 @@ img {
   margin-bottom: -30px;
 }
 .project-item {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-bottom: 30px;
@@ -569,3 +588,57 @@ img {
 }
 
 /* MODAL */
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: scale(0.1);
+}
+.modal {
+  padding: 30px;
+  width: 528px;
+  height: 581px;
+  background-color: #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: relative;
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-icon {
+  width: 18px;
+  height: 18px;
+}
+.close-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

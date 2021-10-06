@@ -73,16 +73,6 @@
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
           <button data-modal-open type="button" class="hero-btn btn">Заказать услугу</button>
         </div>
-        <div class="backdrop is-hidden" data-modal>
-          <div class="modal">
-            <!-- <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eius quod
-              voluptatibus quos sed perferendis aliquid! Possimus reprehenderit, eligendi pariatur
-              incidunt repudiandae voluptatibus magni hic fuga. Odit ratione deserunt eum.
-            </p>
-            <button data-modal-close>Закрыть</button> -->
-          </div>
-        </div>
       </section>
       <!--Особенности-->
       <section class="feature section">
@@ -142,13 +132,22 @@
           <h2 class="title-section-product title">Чем мы занимаемся</h2>
           <ul class="product-list list">
             <li class="product-item item">
-              <img src="./images/box1.jpg" alt="Разработка бэкенда" width="370" height="294" />
+              <div class="product-card">
+                <img src="./images/box1.jpg" alt="Разработка бэкенда" width="370" height="294" />
+                <div class="product-card-title"><h3">Десктопные приложения</h3></div>
+              </div>
             </li>
             <li class="product-item item">
-              <img src="./images/box2.jpg" alt="Оптимизация" width="370" height="294" />
+              <div class="product-card">
+                <img src="./images/box2.jpg" alt="Разработка бэкенда" width="370" height="294" />
+                <div class="product-card-title"><h3">Мобильные приложения</h3></div>
+              </div>
             </li>
             <li class="product-item item">
-              <img src="./images/box3.jpg" alt="Дизайнерские решения" width="370" height="294" />
+              <div class="product-card">
+                <img src="./images/box3.jpg" alt="Разработка бэкенда" width="370" height="294" />
+                <div class="product-card-title"><h3">Дизайнерские решения</h3></div>
+              </div>
             </li>
           </ul>
         </div>
@@ -434,6 +433,15 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button data-modal-close type="button" class="close-btn">
+          <svg class="close-icon">
+            <use href="./images/sprite.svg#icon-close-black"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
     <script src="./js/modal.js"></script>
   </body>
 </html>
